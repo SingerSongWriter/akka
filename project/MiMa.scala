@@ -538,6 +538,9 @@ object MiMa extends AutoPlugin {
         ProblemFilters.exclude[DirectMissingMethodProblem]("akka.cluster.ddata.WriteAggregator.this"),
         ProblemFilters.exclude[IncompatibleResultTypeProblem]("akka.cluster.ddata.Replicator.write"),
 
+        // #21537 coordinated shutdown
+        ProblemFilters.exclude[DirectMissingMethodProblem]("akka.cluster.ClusterCoreDaemon.removed"),
+
         // #20737 aligned test sink and test source stage factory methods types
         ProblemFilters.exclude[IncompatibleResultTypeProblem]("akka.stream.testkit.TestSinkStage.apply")
       )
